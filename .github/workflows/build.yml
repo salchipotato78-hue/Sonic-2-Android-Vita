@@ -13,6 +13,15 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Verificar submódulos
+        run: |
+          for f in lib/falso_jni/FalsoJNI.c lib/so_util/so_util.c lib/vitagl/Makefile; do
+            if [ ! -f "$f" ]; then
+              echo "::error::Falta $f. Los submódulos no están registrados en el repo. Ejecuta scripts/setup-submodules.sh y haz commit de .gitmodules y lib/."
+              exit 1
+            fi
+          done
+
       - name: Dependencias del host
         run: |
           sudo apt-get update

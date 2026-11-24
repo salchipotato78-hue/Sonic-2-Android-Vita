@@ -18,6 +18,22 @@ El `.so` original y los datos del juego **no** se incluyen en este repositorio.
 2. Copia `assets/Data.rsdk.xmf` del APK tal cual (no lo renombres).
 3. En el Vita, coloca ambos archivos en `ux0:data/s2/`.
 
+
+## Submódulos (solución al error "Cannot find source file lib/falso_jni/FalsoJNI.c")
+
+Si CI falla porque faltan `lib/falso_jni`, `lib/so_util` o `lib/vitagl`, el repo no tiene los
+submódulos registrados. Un zip o una copia de archivos no los incluye. Para arreglarlo, desde la
+raíz del repo:
+
+```sh
+./scripts/setup-submodules.sh
+git add .gitmodules lib
+git commit -m "Register vendored submodules"
+git push
+```
+
+Luego comprueba con `git submodule status`: deben aparecer cuatro líneas con un hash.
+
 ## Compilar
 
 ```sh
