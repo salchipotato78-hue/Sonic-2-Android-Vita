@@ -52,7 +52,7 @@ jobs:
           echo "/usr/local/vitasdk/bin" >> "$GITHUB_PATH"
 
       - name: Configurar CMake
-        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 
       - name: Compilar VPK
         run: cmake --build build -j"$(nproc)"
