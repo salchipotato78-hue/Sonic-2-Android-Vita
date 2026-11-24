@@ -860,5 +860,5 @@ void vglSetShaderCachePath(const char *path) {
 }
 
 void vglSetShaderAssociationPath(const char *path) {
-	shark_set_shader_association_path(path);
+	(void)path; /* shark_set_shader_association_path no está disponible en el SDK actual */
 }
