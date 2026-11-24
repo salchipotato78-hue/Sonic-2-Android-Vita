@@ -43,7 +43,7 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 
-El VPK queda en `build/`. Título: "Sonic 2", ID `SNIC00002`.
+El VPK queda en `build/`. Título: "Sonic 2", ID `SONC20001`.
 
 ## Estado
 
